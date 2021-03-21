@@ -7,14 +7,33 @@
   margin: 0 auto;
 }
 
-.page-footer__conatiner {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+.page-footer__container {
+  @media screen and(min-width: 768px) {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  @media screen and(min-width: 1200px) {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
 }
 
 .page-footer__info {
-  margin-right: 70px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and(min-width: 1200px) {
+    margin-right: 70px;
+    margin-bottom: 0;
+    align-items: start;
+    width: 100%;
+  }
 }
 
 .info__link {
@@ -23,7 +42,9 @@
 }
 
 .info__house {
-  display: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 9px;
   font-weight: 400;
   font-size: 14px;
@@ -33,7 +54,14 @@
 }
 
 .info__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
+
+  @media screen and(min-width: 1200px) {
+    align-items: start;
+  }
 }
 
 .info__item {
@@ -51,7 +79,16 @@
 }
 
 .social-container {
-  margin-right: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+
+  @media screen and(min-width: 1200px) {
+    margin-right: 93px;
+    width: 100%;
+    margin-bottom: 0;
+  }
 }
 
 .social__text {
@@ -99,7 +136,15 @@
 .footer-form__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  // justify-content: space-between;
+  width: 100%;
+
+  @media screen and(min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
 .footer-form__text {
@@ -113,14 +158,38 @@
   margin-bottom: 20px;
 }
 
+.footer-form__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and(min-width: 768px) {
+    width: 450px;
+  }
+
+  @media screen and(min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+  }
+}
+
 .footer-form__input {
-  width: 358px;
+  width: 100%;
   height: 50px;
   background-color: $grey-back;
   border: 1px solid $white-third;
   border-radius: 4px;
-  margin-right: 12px;
+
   padding: 15px 16px;
+  margin-bottom: 20px;
+
+  @media screen and(min-width: 1200px) {
+    width: 358px;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
 
   &::placeholder {
     font-weight: 400;
@@ -132,7 +201,8 @@
 }
 
 .footer-form__btn {
-  display: inline-flex;
+  margin: 0 auto;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;

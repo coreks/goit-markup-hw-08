@@ -1,19 +1,53 @@
 .cards {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: $white-first;
+
+  @media screen and(min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .button-set {
   display: flex;
-  text-align: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  text-align: start;
+  justify-content: start;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+
+  @media screen and(min-width: 768px) {
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  @media screen and(min-width: 1200px) {
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
 }
 
-.button-set__item:not(:last-child) {
-  margin-right: 8px;
+.button-set__item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &:nth-child(-n + 4) {
+    @media screen and(max-width: 479px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &:nth-child(-n + 3) {
+    @media screen and(max-width: 767px) {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .button-set__btn {
@@ -41,42 +75,94 @@
   }
 }
 
-.button-set__all {
-  min-width: 73px;
-}
+// .button-set__all {
+//   min-width: 73px;
+// }
 
-.button-set__web {
-  min-width: 128px;
-}
+// .button-set__web {
+//   min-width: 128px;
+// }
 
-.button-set__app {
-  min-width: 145px;
-}
+// .button-set__app {
+//   min-width: 145px;
+// }
 
-.button-set__design {
-  min-width: 103px;
-}
+// .button-set__design {
+//   min-width: 103px;
+// }
 
-.button-set__marketing {
-  min-width: 130px;
-}
+// .button-set__marketing {
+//   min-width: 130px;
+// }
 
 .cards-set {
   margin: 0;
+
+  @media screen and(min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+
   display: flex;
   flex-wrap: wrap;
-  margin-left: -30px;
+  // margin-left: -30px;
 
-  & :hover,
-  & :focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
-  }
+  // & :hover,
+  // & :focus {
+  //   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+  //     1px 4px 6px rgba(0, 0, 0, 0.16);
+  // }
 }
 
 .product {
   background-color: $white-first;
-  transition: box-shadow $animation-timing-function;
+  transition: filter $animation-timing-function;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  @media screen and(min-width: 768px) {
+    width: 354px;
+    margin-left: 30px;
+    margin-top: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: unset;
+    }
+  }
+  @media screen and(min-width: 1200px) {
+    min-width: 370px;
+    flex-basis: calc(100% / 9 - 30px);
+    margin-left: 30px;
+    // margin-bottom: 30px;
+  }
+}
+
+.product__link {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__image {
+  width: 100%;
+}
+
+.product__card {
+  padding: 20px 24px;
+  border: 1px solid $grey-line-second;
+  transition: filter $animation-timing-function;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .product__title {
@@ -86,11 +172,6 @@
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-
-  &:hover,
-  &:focus {
-    box-shadow: none;
-  }
 }
 
 .product__text {
@@ -101,18 +182,6 @@
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: $grey-first;
-
-  &:hover,
-  &:focus {
-    box-shadow: none;
-  }
-}
-
-.product {
-  min-width: 370px;
-  flex-basis: calc(100% / 9 - 30px);
-  margin-left: 30px;
-  margin-bottom: 30px;
 }
 
 .product__thumb {
@@ -140,20 +209,20 @@
   }
 }
 
-.product__container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  display: flex;
-  opacity: 0;
+// .product__container {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 100%;
+//   display: flex;
+//   opacity: 0;
 
-  .product__link:hover &,
-  .product__link:focus & {
-    opacity: 1;
-  }
-}
+//   .product__link:hover &,
+//   .product__link:focus & {
+//     opacity: 1;
+//   }
+// }
 
 .product__label {
   display: flex;
@@ -165,15 +234,4 @@
   padding: 63px 24px;
   margin: 0;
   text-align: left;
-}
-
-.product__card {
-  padding: 20px 24px;
-  border: 1px solid $grey-line-second;
-  transition: filter $animation-timing-function;
-
-  &:hover,
-  &:focus {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
 }

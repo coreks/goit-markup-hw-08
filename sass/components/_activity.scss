@@ -1,8 +1,13 @@
 .activity {
+  display: none;
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 82px;
   background-color: $white-first;
+
+  @media screen and(min-width: 1200px) {
+    display: block;
+  }
 }
 
 .activity__title {
