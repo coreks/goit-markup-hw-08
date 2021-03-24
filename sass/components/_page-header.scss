@@ -6,8 +6,9 @@
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 80px;
+  flex-direction: row;
+  // justify-content: space-between;
+  // height: 80px;
 }
 
 .page-header__nav {
