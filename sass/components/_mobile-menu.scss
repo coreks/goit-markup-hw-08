@@ -1,9 +1,39 @@
-.mobile-menu___container {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid tomato;
-}
+// .mobile-menu__container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border: 1px solid blue;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: brown;
+//   padding: 32px;
+//   z-index: 99;
+// }
 
 .menu-toggle {
-  display: none;
+  // display: none;
+}
+
+.menu-conatainer {
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: 100vw;
+  // height: 100vh;
+  // background-color: brown;
+  // padding: 32px;
+  // z-index: 99;
+
+  // transform: translateX(100%);
+  // transition: transform $animation-timing-function;
+}
+
+.menu-conatainer.is-open {
+  // transform: translateX(0);
+}
+
+.menu-conatainer .menu-toggle {
 }
