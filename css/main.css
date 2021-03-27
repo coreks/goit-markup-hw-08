@@ -258,10 +258,6 @@ img {
   height: auto;
 }
 
-h2 {
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 .container {
   width: 100%;
   padding-left: 15px;
@@ -1412,6 +1408,9 @@ h2 {
     margin-right: 93px;
     width: 100%;
     margin-bottom: 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 }
 
@@ -2054,17 +2053,13 @@ h2 {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-top: calc(-1 * 30px);
-    margin-left: calc(-1 * 30px);
+    margin-top: -30px;
+    margin-left: -30px;
   }
 }
 
 .product {
   cursor: pointer;
-}
-
-.product:not(:last-child) {
-  margin-bottom: 30px;
 }
 
 .product:hover {
